@@ -14,6 +14,13 @@ module.exports = function(grunt) {
           src: ['**'],
           dest: 'templates/prod',
           filter: 'isFile'
+        },
+        {
+          expand: true,
+          cwd:'public/dev',
+          src: ['**', '!**/*.js', '!**/*.css'],
+          dest: 'public/prod',
+          filter: 'isFile'
         }]
       }
     },
@@ -31,10 +38,34 @@ module.exports = function(grunt) {
       }
     },
     rev: {
-      assets: {
+      main: {
         files: {
           source: ['public/prod/**/*.{js,css}']
         }
+      }
+    },
+    htmlmin: {
+      main: {
+        files: [{
+          expand: true,
+          cwd: 'templates/prod',
+          src: '{,*/}*.html',
+          dest: 'templates/prod'
+        }],
+        options: {
+          removeComments: true,
+          collapseWhitespace: true
+        }
+      }
+    },
+    imagemin: {
+      main: {
+        files: [{
+          expand: true,
+          cwd: 'public/prod',
+          src: ['**/*.{.png,jpg,jpeg,gif}'],
+          dest: 'public/prod'
+        }]
       }
     }
   });
@@ -45,8 +76,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-htmlmin');
+  grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-rev');
 
   grunt.registerTask('build', ['clean:before', 'copy', 'useminPrepare',
-    'concat', 'uglify', 'cssmin', 'rev', 'usemin', 'clean:after']);
+    'concat', 'uglify', 'cssmin', 'rev', 'usemin', 'htmlmin', 'clean:after']);
 };
