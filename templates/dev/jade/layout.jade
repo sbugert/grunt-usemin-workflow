@@ -4,9 +4,9 @@ html
     meta(charset='UTF-8')
     title= title
     meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no")
-    <!-- build:css /css/jade.css -->
-    link(rel='stylesheet', href='/public/dev/css/vendor/bar.css')
-    link(rel='stylesheet', href='/public/dev/css/foo.css')
+    <!-- build:css(public/dev) /css/jade.css -->
+    link(rel='stylesheet', href='/css/vendor/bar.css')
+    link(rel='stylesheet', href='/css/foo.css')
     <!-- endbuild -->
 
   body
@@ -14,7 +14,7 @@ html
       include header
     .container
       block content
-    <!-- build:js /js/jade.js -->
-    script(src='/public/dev/js/vendor/bar.js')
-    script(src="/public/dev/js/foo.js")
+    <!-- build:js(public/dev) /js/jade.js -->
+    script(src='/js/vendor/bar.js')
+    script(src="/js/foo.js")
     <!-- endbuild -->

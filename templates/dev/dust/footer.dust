@@ -1,6 +1,6 @@
-<!-- build:css /css/dust.css -->
-<script src="/public/dev/css/foo.css"></script>
-<script src="/public/dev/css/vendor/bar.css"></script>
+<!-- build:css(public/dev) /css/dust.css -->
+<script src="/css/foo.css"></script>
+<script src="/css/vendor/bar.css"></script>
 <!-- endbuild -->
 
 <footer>
@@ -10,7 +10,7 @@
     zuletzt aktualisiert:<br>
   </div>
 </footer>
-<!-- build:js /js/dust.js -->
-<script src="/public/dev/js/vendor/bar.js"></script>
-<script src="/public/dev/js/foo.js"></script>
+<!-- build:js(public/dev) /js/dust.js -->
+<script src="/js/vendor/bar.js"></script>
+<script src="/js/foo.js"></script>
 <!-- endbuild -->
