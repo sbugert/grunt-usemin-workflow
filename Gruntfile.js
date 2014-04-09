@@ -81,5 +81,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-rev');
 
   grunt.registerTask('build', ['clean:before', 'copy', 'useminPrepare',
-    'concat', 'uglify', 'cssmin', 'rev', 'usemin', 'htmlmin', 'clean:after']);
+    'concat', 'uglify', 'cssmin', 'rev', 'usemin', 'htmlmin', 'imagemin',
+    'clean:after']);
 };
