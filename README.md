@@ -9,6 +9,5 @@ Run `grunt build` to start the process.
 
 _TODO:_
 
-* Copy unrelated files (like fonts and images) to public/prod/ folder
-* optimize images
 * ...
+
