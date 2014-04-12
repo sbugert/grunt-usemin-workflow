@@ -58,7 +58,7 @@ module.exports = function(grunt) {
         }
       }
     },
-    imagemin: {
+    image: {
       main: {
         files: [{
           expand: true,
@@ -77,10 +77,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
-  grunt.loadNpmTasks('grunt-contrib-imagemin');
+  grunt.loadNpmTasks('grunt-image');
   grunt.loadNpmTasks('grunt-rev');
 
   grunt.registerTask('build', ['clean:before', 'copy', 'useminPrepare',
-    'concat', 'uglify', 'cssmin', 'rev', 'usemin', 'htmlmin', 'imagemin',
+    'concat', 'uglify', 'cssmin', 'rev', 'usemin', 'htmlmin', 'image',
     'clean:after']);
 };
