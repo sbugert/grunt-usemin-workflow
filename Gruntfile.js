@@ -37,9 +37,14 @@ module.exports = function(grunt) {
         assetsDirs: ['public/prod/']
       }
     },
-    glify: {
+    uglify: {
       otpions: {
         preserveComments: 'some'
+      }
+    },
+    cssmin: {
+      options: {
+        keepSpecialComments: 1
       }
     },
     rev: {
